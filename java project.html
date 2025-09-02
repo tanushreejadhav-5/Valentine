@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine Project</title>
+  <style>
+    body {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: pink;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      margin-bottom: 40px;
+      font-size: 2rem;
+      color: red;
+    }
+    .btn {
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 25px;
+      transition: all 0.2s ease;
+      position: absolute; /* For "No" button to run away */
+    }
+    #yes {
+      background-color: #ff4d6d;
+      color: white;
+      position: static; /* Yes stays fixed in place */
+    }
+    #no {
+      background-color: #333;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>Will you be my Valentine? ❤️</h1>
+  <button id="yes" class="btn">Yes</button>
+  <button class="no" class="btn">No</button>
+<!--  
+# -> id ; . -> class  
+-->
+  <script>
+    const yesBtn = document.getElementById("yes");
+    // const noBtn = document.getElementById("no");
+    const noBtn = document.getElementsByClassName("no");
+
+    // Yes button alert
+    yesBtn.addEventListener("click", () => {
+      alert("Let's go out! 💕");
+    });
+
+    // No button runaway effect
+    noBtn.addEventListener("mouseover", () => {
+      const x = Math.floor(Math.random() * (window.innerWidth - noBtn.offsetWidth));
+      const y = Math.floor(Math.random() * (window.innerHeight - noBtn.offsetHeight));
+      noBtn.style.left = x + "px";
+      noBtn.style.top = y + "px";
+    });
+  </script>
+</body>
+</html>
