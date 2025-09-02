@@ -24,7 +24,7 @@
       border: none;
       border-radius: 8px;
       cursor: pointer;
-      margin: 25px;
+      margin: 30px;
       transition: all 0.2s ease;
       position: absolute; /* For "No" button to run away */
     }
@@ -40,20 +40,17 @@
   </style>
 </head>
 <body>
-  <h1>Will you be my Valentine? ❤️</h1>
+  <h1>Will you be my Friend? ❤️</h1>
   <button id="yes" class="btn">Yes</button>
-  <button class="no" class="btn">No</button>
-<!--  
-# -> id ; . -> class  
--->
+  <button id="no" class="btn">No</button>
+
   <script>
     const yesBtn = document.getElementById("yes");
-    // const noBtn = document.getElementById("no");
-    const noBtn = document.getElementsByClassName("no");
+    const noBtn = document.getElementById("no");
 
     // Yes button alert
     yesBtn.addEventListener("click", () => {
-      alert("Let's go out! 💕");
+      alert("Daisuki desu 💕, btw you are stuck with me forever!");
     });
 
     // No button runaway effect
